@@ -3,80 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JSX Viewer — Privacy Policy</title>
+  <title>JSX Viewer — Preview React .jsx & .tsx files, fully offline</title>
+  <meta name="description" content="JSX Viewer opens .jsx and .tsx files from your Android device and renders them as live React components — entirely offline. No server, no network, no setup." />
+  <meta property="og:title" content="JSX Viewer" />
+  <meta property="og:description" content="Preview React .jsx & .tsx files on your phone — fully offline." />
+  <meta property="og:image" content="assets/feature-graphic.png" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/icon.png" />
   <style>
-    body { max-width: 720px; margin: 40px auto; padding: 0 20px;
-           font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #1a1a1a; }
-    h1 { font-size: 1.6rem; }
-    h2 { font-size: 1.15rem; margin-top: 1.8em; }
-    code { background: #f2f3f5; padding: 1px 5px; border-radius: 4px; }
-    .muted { color: #666; font-size: 0.9rem; }
-    a { color: #2F6FED; }
+    :root {
+      --navy: #0B1B2B; --navy2: #102338; --accent: #2F6FED; --accent-soft: #4d8bff;
+      --ink: #1a2330; --muted: #5b6b80; --canvas: #f5f7fb; --card: #ffffff; --line: #e6ebf3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink);
+           background: var(--canvas); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: var(--accent); text-decoration: none; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+    /* Hero */
+    .hero { background:
+        radial-gradient(700px 380px at 20% 0%, rgba(47,111,237,0.28), rgba(47,111,237,0) 70%),
+        linear-gradient(160deg, var(--navy) 0%, var(--navy2) 60%, #16345e 100%);
+      color: #fff; text-align: center; padding: 72px 24px 80px; }
+    .hero img.icon { width: 104px; height: 104px; border-radius: 26px;
+      box-shadow: 0 18px 48px rgba(0,0,0,0.45); }
+    .hero h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1.5px; margin: 22px 0 8px; }
+    .hero p.tag { font-size: 1.2rem; color: #adc2e6; font-weight: 500; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; margin-top: 28px;
+      background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22);
+      color: #dce8fb; font-weight: 600; font-size: 0.95rem; padding: 11px 20px; border-radius: 999px; }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-soft);
+      box-shadow: 0 0 12px 2px rgba(77,139,255,0.8); }
+
+    /* Sections */
+    section { padding: 64px 0; }
+    h2 { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.5px; text-align: center; }
+    .lead { max-width: 640px; margin: 16px auto 0; text-align: center; color: var(--muted);
+      font-size: 1.08rem; }
+
+    /* Features */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+    .feature { background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+      padding: 22px; }
+    .feature .ic { width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center;
+      background: rgba(47,111,237,0.10); color: var(--accent); font-size: 20px; margin-bottom: 12px; }
+    .feature h3 { font-size: 1.02rem; font-weight: 700; }
+    .feature p { font-size: 0.92rem; color: var(--muted); margin-top: 4px; }
+
+    /* Screenshots */
+    .shots { display: flex; justify-content: center; gap: 28px; margin-top: 40px; flex-wrap: wrap; }
+    .shots img { width: 240px; max-width: 60vw; border-radius: 22px; border: 1px solid var(--line);
+      box-shadow: 0 16px 40px rgba(16,35,56,0.16); }
+
+    /* Footer */
+    footer { background: var(--navy); color: #9db4d6; text-align: center; padding: 44px 24px; }
+    footer a { color: #bcd2f5; }
+    footer .row { margin-bottom: 8px; }
+
+    @media (max-width: 720px) {
+      .hero h1 { font-size: 2.3rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy — JSX Viewer</h1>
-  <p class="muted">Last updated: 11 June 2026</p>
+  <header class="hero">
+    <img class="icon" src="assets/icon.png" alt="JSX Viewer app icon" />
+    <h1>JSX Viewer</h1>
+    <p class="tag">Preview React <code>.jsx</code> &amp; <code>.tsx</code> files — fully offline</p>
+    <div class="badge"><span class="dot"></span> Coming soon to Google Play</div>
+  </header>
 
-  <p>
-    JSX Viewer ("the app") is an offline tool that opens <code>.jsx</code> /
-    <code>.tsx</code> files you choose from your device and renders them as a live
-    preview. This policy explains what the app does and does not do with your data.
-  </p>
+  <section class="wrap">
+    <h2>Render components straight from your phone</h2>
+    <p class="lead">
+      JSX Viewer opens <code>.jsx</code> and <code>.tsx</code> files from your device and renders
+      them as live React components — entirely on-device. Babel and React are bundled inside the
+      app, so it compiles and previews with no server, no network, and no setup. It even works in
+      airplane mode.
+    </p>
+  </section>
 
-  <h2>The short version</h2>
-  <p>
-    <strong>JSX Viewer does not collect, transmit, sell, or share any personal
-    data.</strong> It has no servers, no analytics, no advertising, no accounts, and
-    works entirely offline.
-  </p>
+  <section class="wrap" style="padding-top: 0;">
+    <h2>Features</h2>
+    <div class="grid">
+      <div class="feature"><div class="ic">⚡</div><h3>Fully offline</h3><p>Babel + React bundled locally. No internet, ever.</p></div>
+      <div class="feature"><div class="ic">⟨⟩</div><h3>.jsx &amp; .tsx</h3><p>TypeScript files are transpiled on the fly.</p></div>
+      <div class="feature"><div class="ic">🕘</div><h3>Recent files</h3><p>One-tap access to files you opened before.</p></div>
+      <div class="feature"><div class="ic">⛶</div><h3>Fullscreen</h3><p>Hide the system bars for a clean preview.</p></div>
+      <div class="feature"><div class="ic">🖥️</div><h3>Desktop mode</h3><p>Render at a 1280px viewport to check breakpoints.</p></div>
+      <div class="feature"><div class="ic">{ }</div><h3>Source view</h3><p>Flip between the render and the raw file.</p></div>
+    </div>
+  </section>
 
-  <h2>Files you open</h2>
-  <p>
-    When you tap "Open File", Android's system file picker lets you choose a
-    <code>.jsx</code> or <code>.tsx</code> file. The app reads the contents of that
-    file <em>only</em> to compile and render it on your device. File contents are
-    never uploaded or sent anywhere — all processing happens locally inside the app.
-  </p>
+  <section style="background: #eef2f8;">
+    <div class="wrap">
+      <h2>See it in action</h2>
+      <div class="shots">
+        <img src="assets/screenshot-home.png" alt="JSX Viewer home screen" />
+        <img src="assets/screenshot-render.png" alt="A rendered React component" />
+      </div>
+    </div>
+  </section>
 
-  <h2>Information stored on your device</h2>
-  <p>
-    For convenience, the app keeps a "Recent files" list (file names and paths) so you
-    can re-open files quickly. This list is stored only in the app's local storage on
-    your device, is never transmitted, and can be cleared at any time with the "Clear"
-    button.
-  </p>
-
-  <h2>Permissions</h2>
-  <p>
-    On older Android versions (Android 12 and below), the app requests read access to
-    storage solely to open the files you explicitly select. On Android 13 and above,
-    no broad storage permission is requested — file access goes through the system
-    file picker.
-  </p>
-
-  <h2>Network</h2>
-  <p>
-    The app makes no network requests. The JavaScript libraries used to compile and
-    render your components are bundled inside the app, so it functions fully offline.
-  </p>
-
-  <h2>Children's privacy</h2>
-  <p>
-    The app collects no data from anyone, including children, and is suitable for all
-    ages.
-  </p>
-
-  <h2>Changes to this policy</h2>
-  <p>
-    If this policy changes, the updated version will be posted at this URL with a new
-    "Last updated" date.
-  </p>
-
-  <h2>Contact</h2>
-  <p>
-    Questions about this policy? Contact the developer at
-    <a href="mailto:apps@motion-zone.shop">apps@motion-zone.shop</a>.
-  </p>
+  <footer>
+    <div class="row">JSX Viewer — an offline React component previewer for Android.</div>
+    <div class="row">
+      Contact <a href="mailto:apps@motion-zone.shop">apps@motion-zone.shop</a>
+      &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
+    <div class="row" style="opacity:0.7; font-size:0.9rem;">© 2026 · All rights reserved.</div>
+  </footer>
 </body>
 </html>
